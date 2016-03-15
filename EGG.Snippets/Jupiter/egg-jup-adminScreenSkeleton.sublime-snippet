@@ -1,0 +1,113 @@
+<snippet>
+	<content><![CDATA[
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{State.Title}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="${1:users}">
+            <div class="row">
+                <!-- LIST -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" ng-model="${2:self.Filter.Search}" ng-change="${3:self.loadPartDealershipUsers();}">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="${4:self.loadPartDealershipUsers();}">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right" ng-show="${5:self.UserList}.length > 0">
+                            <button class="btn btn-success" ng-click="${6:self.addNewUser()}"><span class="glyphicon glyphicon-plus"></span> Add New</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            &nbsp;
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="smallCol">ID</th>
+                                        <th>User</th>
+                                        <!-- <th>Hub</th>
+                                        <th>Dealer</th> -->
+                                        <th>Level</th>
+                                        <th class="smallCol">Active</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="${7:user} in $5" class="clickable" ng-class="{'success': $7 === ${9:self.SelectedUser}}">
+                                        <td class="text-center" ng-click="self.setSelectedUser($7);">{{$7.UserID_PK}}</td>
+                                        <td ng-click="self.setSelectedUser($7);">{{$7.FirstName + ' ' + $7.LastName}}</td>
+                                        <!-- <td ng-click="self.setSelectedUser($7);">-</td>
+                                        <td ng-click="self.setSelectedUser($7);">-</td> -->
+                                        <td ng-click="self.setSelectedUser($7);">{{$7.RoleName === null ? '-' : $7.RoleName}}</td>
+                                        <td class="text-center" ng-click="self.toggleActiveForUser($7);">
+                                            <span class="glyphicon glyphicon-ok" ng-if="$7.Active" title="Click here to deactivate."></span>
+                                            <span class="glyphicon glyphicon-remove" ng-if="!$7.Active" title="Click here to activate."></span>
+                                        </td>
+                                    </tr>
+                                    <tr ng-if="$5.length === 0">
+                                        <td colspan="4"><mark><i>There are no records to display...</i></mark></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <uib-pagination total-items="self.TotalItems"
+                                ng-model="self.Filter.PageNumber"
+                                items-per-page="self.Filter.PageSize"
+                                ng-change="self.pageChanged()" boundary-link-numbers="true" rotate="true" force-ellipses="true" max-size="5"
+                                previous-text="&lsaquo;" next-text="&rsaquo;"></uib-pagination>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <!-- END LIST -->
+
+                <!-- ADD/EDIT -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-7" ng-show="$5.length > 0">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <br/>
+                            <form name="UserForm" role="form" class="form-horizontal" novalidate>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <!-- EDIT/ADD FIELDS -->
+
+                                    <!-- END EDIT/ADD FIELDS -->
+                                </div>
+                            </form>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 text-right">
+                                <hr />
+
+
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-md-offset-6">
+                                    <button class="btn btn-primary btn-block" ng-click="self.saveSelectedUser()" ng-disabled="UserForm.\$invalid">Save</button>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                    <button class="btn btn-danger btn-block" ng-click="self.addNewUser()">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END ADD/EDIT -->
+            </div>
+        </div>
+    </div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>egg-jup-adminScreenSkeleton</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

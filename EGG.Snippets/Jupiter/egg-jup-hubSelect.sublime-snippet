@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+<div class="row form-group" ng-class="{ 'has-error': ${1:CustomerForm}.Hub.\$invalid && $1.Hub.\$dirty }">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 text-right">
+        <label for="Hub">Hub${2:&nbsp;<span class="required">*</span>}</label>
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
+        <select name="Hub" class="form-control" ${3:required="required" }ng-model="${4:self.SelectedEditCustomer.HubID_FK}" ng-options="${5:hub.HubID_PK} as ${6:hub.Name} for ${7:hub} in ${8:self.HubList}">
+            <option value>--Hub--</option>
+        </select>
+        <div class="error" ng-show="$1.Hub.\$invalid">
+            <small class="error" ng-show="$1.Hub.\$error.required">Is required.</small>
+        </div>
+    </div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>egg-jup-hubSelect</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

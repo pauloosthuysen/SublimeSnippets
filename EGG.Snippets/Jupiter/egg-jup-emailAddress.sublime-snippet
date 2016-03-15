@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+<div class="row form-group" ng-class="{ 'has-error': ${1:FormName}.Email.\$invalid && $1.Email.\$dirty }">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 text-right">
+        <label for="Email">E-Mail${2:&nbsp;<span class="required">*</span>}</label>
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
+        <input name="Email" placeholder="E-Mail" ${3:required ng-required="true" }type="text" class="form-control" ng-model="${4:self.SelectedEditUser.Email}" ng-pattern="/[a-z0-9!#\$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#\$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/" ng-minlength='3' ng-maxlength='145' />
+        <div class="error" ng-show="$1.Email.\$invalid">
+            <small class="error" ng-show="$1.Email.\$error.pattern">Need a valid email address.</small>
+            <small class="error" ng-show="$1.Email.\$error.minlength">Too little information.</small>
+            <small class="error" ng-show="$1.Email.\$error.maxlength">Bit too long.</small>
+            <small class="error" ng-show="$1.Email.\$error.required">Is required.</small>
+        </div>
+    </div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>egg-jup-emailAddress</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
