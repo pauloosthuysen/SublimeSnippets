@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * Load Dealerships
+ * @return {[type]} [description]
+ */
+function loadDealerships(){
+    Dealerships.getAll({
+        Deleted: 0,
+        HubID_FK: ${1:self.Filter.HubID_FK},
+        PageNumber: 1,
+        PageSize: 99999,
+        OrderBy: 'DealershipName.ASC'
+    }, function(response){
+        ${2:self.DealershipList} = response;
+    });
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>egg-jup-js-getHubList</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

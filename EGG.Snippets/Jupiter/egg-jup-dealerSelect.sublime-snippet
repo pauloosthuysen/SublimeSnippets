@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    <select name="Dealership" class="form-control" ng-model="${1:self.Filter.DealershipID_FK}" ng-options="dealer.DealershipID_PK as dealer.DealershipName for dealer in ${2:self.DealershipList} | orderBy:'${3:DealershipName}'">
+        <option value>--Dealership--</option>
+    </select>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>egg-jup-dealerSelect</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+\$httpBackend.expectPOST('${1:http://localhost:63024/PartCustomers?version=1}').respond(${2:\{\}});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>egg-jup-js-test-expectPOST</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

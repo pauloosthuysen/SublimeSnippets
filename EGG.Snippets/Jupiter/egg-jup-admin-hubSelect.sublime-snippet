@@ -15,7 +15,7 @@
 </div>
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>egg-jup-hubSelect</tabTrigger>
+	<tabTrigger>egg-jup-admin-hubSelect</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
