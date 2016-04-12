@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+(function() {
+    'use strict';
+
+    angular
+        .module('${1:createquote}')
+        .controller('${2:CreateQuote}Controller', ['\$scope', '\$location', 'Authentication', $2Controller]);
+
+    /* @ngInject */
+    function $2Controller(\$scope, \$location, Authentication) {
+        /*jshint validthis: true */
+        var self = this;
+        self.title = '$2Controller';
+
+        self.CurrentUser = Authentication.getCurrentUser();
+
+        /* Interface */
+        self.init = init;
+        /* End Interface */
+
+        self.init();
+
+        /* Implementation */
+        function init() {
+
+        }
+        /* End Implementation */
+    }
+})();
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>egg-jup-js-controller</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

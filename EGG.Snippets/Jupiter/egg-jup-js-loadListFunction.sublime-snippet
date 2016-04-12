@@ -10,6 +10,8 @@ function load$1(){
     }, function(response){
         if(angular.isDefined(response)){
         	${4:}
+        }else{
+            console.error('No response received', '|response:', response);
         }
     });
 }

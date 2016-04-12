@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\$httpBackend.expectGET('${1:http://localhost:63024/PartCollections?version=1}').respond(${2:[]});
+\$httpBackend.expectGET('${1:http://localhost:63024/PartCollections?version=1}').respond(${2:[\{\}]});
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>egg-jup-js-test-expectGET-all</tabTrigger>
