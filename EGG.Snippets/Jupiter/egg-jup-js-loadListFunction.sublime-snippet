@@ -1,15 +1,18 @@
 <snippet>
 	<content><![CDATA[
 /**
- * Load ${1:PartCollectionsItems}
- * @return {[type]} [description]
+ * Load ${1:ThirdPartyAccounts}
  */
 function load$1(){
     $1.getAll({
-        ${2:PartCollectionsItemID_FK}: ${3:self.PartCollectionID}
+        Deleted: 0,
+        Active: 1,
+        PageNumber: 1,
+        PageSize: config.PageSize,
+        OrderBy: '${2:ContactPerson.ASC}'
     }, function(response){
         if(angular.isDefined(response)){
-        	${4:}
+            self.${3:ThirdPartyAccountList} = response;
         }else{
             console.error('No response received', '|response:', response);
         }
